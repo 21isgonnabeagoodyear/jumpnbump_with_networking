@@ -44,6 +44,7 @@
 #ifndef M_PI
 #define M_PI		3.14159265358979323846
 #endif
+#include <stdint.h>
 
 gob_t rabbit_gobs = { 0 };
 gob_t font_gobs = { 0 };
@@ -273,11 +274,11 @@ NetInfo net_info[JNB_MAX_PLAYERS];
 
 typedef struct
 {
-	unsigned long cmd;
-	long arg;
-	long arg2;
-	long arg3;
-	long arg4;
+	uint32_t cmd;
+	int32_t arg;
+	int32_t arg2;
+	int32_t arg3;
+	int32_t arg4;
 } NetPacket;
 
 #define NETPKTBUFSIZE (4 + 4 + 4 + 4 + 4)
